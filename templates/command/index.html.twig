@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des commandes{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('command_list') }}
+{% endblock %}
+
+{% block body %}
+<div id="app">
+</div>
+{% endblock %}
+
+{% block modals %}
+    <div id="app_modal_wrapper">
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        window.command_list_api = "{{ path('command_list_api') }}";
+        window.command_add_api = "{{ path('command_add_api') }}";
+        window.command_edit_api = "{{ path('command_edit_api') }}";
+        window.command_remove_api = "{{ path('command_remove_api') }}";
+        window.lang = "FR";
+    </script>
+    {{ encore_entry_script_tags('command_list') }}
+{% endblock %}
